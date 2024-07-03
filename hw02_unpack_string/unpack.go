@@ -14,8 +14,8 @@ func Unpack(s string) (string, error) {
 
 	for i, j := 0, 1; i < len(s); i, j = i+1, j+1 {
 		if !k {
-			_, error := strconv.Atoi(string(s[i]))
-			if error == nil {
+			_, err := strconv.Atoi(string(s[i]))
+			if err == nil {
 				return "", ErrInvalidString
 			}
 		}
